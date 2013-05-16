@@ -204,6 +204,23 @@ function portfoliopress_widgets_init() {
 			'after_title' => '</h3>',
 		) );
 
+	register_sidebar( array (
+			'name' => __( 'Header-1', 'portfoliopress' ),
+			'id' => 'header-1',
+			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+			'after_widget' => "</li>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		) );
+	register_sidebar( array (
+			'name' => __( 'Header-2', 'portfoliopress' ),
+			'id' => 'header-2',
+			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+			'after_widget' => "</li>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		) );
+
 	register_sidebar( array(
 		'name' => __( 'Footer 1', 'portfoliopress' ),
 		'id' => 'footer-1',

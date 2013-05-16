@@ -23,6 +23,10 @@
 
 <body <?php body_class(); ?>>
 <div id="wrapper">
+	<div id="top">
+		<?php if ( ! dynamic_sidebar( 'header-1' ) ) : ?>
+		<?php endif; // end top widget area ?>
+	</div>
 	<header id="branding">
     	<div class="col-width">
         <?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
@@ -38,6 +42,8 @@
 				<?php if ( !of_get_option('logo', false) ) { ?>
                 	<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
                 <?php } ?>
+				<?php if ( ! dynamic_sidebar( 'header-2' ) ) : ?>
+				<?php endif; // end top widget area ?>
 			</hgroup>
       
 		<nav id="navigation">
