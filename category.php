@@ -39,12 +39,10 @@ if ($is_grid){
 						$classes .= ' ie-col3';
 					}
 					if ( !has_post_thumbnail() || post_password_required() ) {
-						$classes .= ' no-thumb';
+						# $classes .= ' no-thumb';
 					} ?>
 					<div class="<?php echo $classes; ?>">
-						<?php if ( has_post_thumbnail() && !post_password_required() ) { ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark" class="thumb"><?php the_post_thumbnail( $thumbnail ); ?></a>
-						<?php } ?>
+            <a href="<?php the_permalink() ?>" rel="bookmark" class="thumb"><img src="<?php echo catch_that_image($post->post_content); ?>"></img></a>
 						<a href="<?php the_permalink() ?>" rel="bookmark" class="title-overlay"><?php the_title() ?></a>
 					</div>
 					<?php endwhile; ?>
