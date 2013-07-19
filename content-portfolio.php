@@ -25,24 +25,43 @@ if ( is_page() && post_password_required() ) {
 		$thumbnail = 'portfolio-thumbnail-fullwidth';
 	
 	// Query posts if this is being used as a page template
+
+
+	global $paged;
+
+	if ( get_query_var( 'paged' ) )
+		$paged = get_query_var( 'paged' );
+	elseif ( get_query_var( 'page' ) )
+		$paged = get_query_var( 'page' );
+	else
+		$paged = 1;
+
+
+	$args = array();
+	$args['paged'] = $paged;
+
+	$posts_per_page = apply_filters( 'portfoliopress_posts_per_page', '12' );
+	$args['posts_per_page'] = $posts_per_page;
+
 	if ( is_page_template() ) {
 	
-		global $paged;
-	
-		if ( get_query_var( 'paged' ) )
-			$paged = get_query_var( 'paged' );
-		elseif ( get_query_var( 'page' ) )
-			$paged = get_query_var( 'page' );
-		else
-			$paged = 1;
+		global $post;
+
+
+		$args_str = $post->post_content;
+		$args_arr = explode('&', $args_str);
+		foreach ($args_arr as $kv) {
+			$kv_arr = explode('=', $kv);
+			if($kv_arr && count($kv_arr) == 2)
+				$args[$kv_arr[0]] = json_decode($kv_arr[1]);
+		}
 		
-		$posts_per_page = apply_filters( 'portfoliopress_posts_per_page', '9' );	
-		$args = array(
-			'post_type' => 'portfolio',
-			'posts_per_page' => $posts_per_page,
-			'paged' => $paged );
-		query_posts( $args );
+		
+	} else if ( is_category() ) {
+		$cat = get_query_var('cat');
+		$args['cat'] = $cat;
 	}
+	query_posts( $args );
 ?>
 <div id="portfolio"<?php if ( $fullwidth ) { echo ' class="full-width"'; }?>>
 

@@ -31,7 +31,11 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</div><!-- #content -->
+		
+		<div id="sidebar" class="page-sidebar">
+			<?php if ( ! dynamic_sidebar( 'sidebar-page' ) ) : ?>
+			<?php endif; // end top widget area ?>
+		</div>
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 中文版 Portfolio Press\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-13 02:25+0800\n"
-"PO-Revision-Date: 2013-05-13 02:31+0800\n"
+"POT-Creation-Date: 2013-05-28 09:48+0800\n"
+"PO-Revision-Date: 2013-05-28 09:48+0800\n"
 "Last-Translator: Sunny Lau <sunnylau0603@yahoo.com.hk>\n"
 "Language-Team: \n"
 "Language: zh_HK\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_c;esc_attr_e;_n\n"
 "X-Poedit-Basepath: ..\n"
@@ -31,45 +31,49 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr "最常用的分类"
 
-#: author.php:15
+#: author.php:47 category.php:53 content-portfolio.php:98 tag.php:47
+msgid "Sorry, no posts matched your criteria."
+msgstr "抱歉，没有找到文章。"
+
+#: author.php:67
 #, php-format
 msgid "Author Archives: <span class=\"vcard\">%s</span>"
 msgstr "作者归档：<span class=\"vcard\">%s</span>"
 
-#: author.php:27
+#: author.php:79
 #, php-format
 msgid "About %s"
 msgstr "关于 %s"
 
-#: category.php:14
+#: category.php:25 category.php:71
 #, php-format
 msgid "Category Archives: %s"
 msgstr "分类归档：'%s'"
 
-#: comments.php:11
+#: comments.php:12
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr "这文章受密码保护，请输入密码查看评论。"
 
-#: comments.php:22
+#: comments.php:25
 #, php-format
 msgid "One Response to %2$s"
 msgstr "%2$s 有一个回应"
 
-#: comments.php:29 comments.php:41
+#: comments.php:32 comments.php:44
 msgid "Comment navigation"
 msgstr "评论导览"
 
-#: comments.php:30 comments.php:42
+#: comments.php:33 comments.php:45
 msgid "&larr; Older Comments"
 msgstr "&larr; 旧评论"
 
-#: comments.php:31 comments.php:43
+#: comments.php:34 comments.php:46
 msgid "Newer Comments &rarr;"
 msgstr "新评论 &rarr;"
 
-#: content-gallery.php:19 content-image.php:16 content-quote.php:12
-#: content.php:19 content.php:23
+#: content-gallery.php:19 content-image.php:16 content-index.php:26
+#: content-index.php:30 content-quote.php:12 content.php:19 content.php:23
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "阅读全文 <span class=\"meta-nav\">&rarr;</span>"
 
@@ -78,13 +82,32 @@ msgstr "阅读全文 <span class=\"meta-nav\">&rarr;</span>"
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgstr "此图库包含 <a %1$s>%2$s 张照片</a>."
 
-#: content-gallery.php:46 content-image.php:17 content-quote.php:13
-#: content.php:24 full-width-page.php:31 image.php:84 page.php:22
-#: single-portfolio.php:37 single.php:26
+#: content-gallery.php:46 content-image.php:17 content-index.php:31
+#: content-quote.php:13 content.php:24 full-width-event-page.php:32
+#: full-width-page.php:31 image.php:84 page.php:22 single-portfolio.php:37
+#: single.php:42
 msgid "Pages:"
 msgstr "分页："
 
-#: content-none.php:11 search.php:32
+#: content-index.php:16 extensions/template-helpers.php:45
+msgid "Leave a comment"
+msgstr "留下评论"
+
+#: content-index.php:16 extensions/template-helpers.php:45
+msgid "1 Comment"
+msgstr "1 个评论"
+
+#: content-index.php:16 extensions/template-helpers.php:45
+msgid "% Comments"
+msgstr "% 个评论"
+
+#: content-index.php:19 full-width-event-page.php:33 full-width-page.php:32
+#: image.php:32 image.php:98 page.php:23 single-portfolio.php:58 single.php:62
+#: extensions/template-helpers.php:48
+msgid "Edit"
+msgstr "编辑"
+
+#: content-none.php:11
 msgid "Nothing Found"
 msgstr "找不到任何东西"
 
@@ -94,36 +117,27 @@ msgid ""
 "searching can help."
 msgstr "我们似乎无法找到您正在寻找的东西，或许你可以搜索一下。"
 
-#: content-portfolio.php:79
-msgid "Sorry, no posts matched your criteria."
-msgstr "抱歉，没有文章符合您的准则。"
-
-#: footer.php:39
+#: footer.php:53
 msgid "Powered by"
 msgstr "Powered by"
 
-#: footer.php:39
+#: footer.php:53
 msgid "A Semantic Personal Publishing Platform"
 msgstr "语义的个人出版平台"
 
-#: footer.php:39
+#: footer.php:53
 msgid "WordPress"
 msgstr "WordPress"
 
-#: footer.php:39
+#: footer.php:53
 msgid "Portfolio"
 msgstr "Portfolio"
-
-#: full-width-page.php:32 image.php:32 image.php:98 page.php:23
-#: single-portfolio.php:58 single.php:46 extensions/template-helpers.php:48
-msgid "Edit"
-msgstr "编辑"
 
 #: functions.php:47
 msgid "Primary Menu"
 msgstr "首要选单"
 
-#: functions.php:156
+#: functions.php:158
 #, php-format
 msgid ""
 "If you wish to use custom post types for portfolios, please install the "
@@ -131,35 +145,61 @@ msgid ""
 "\">Install Now</a> | <a href=\"%2$s\">Hide Notice</a>"
 msgstr ""
 
-#: functions.php:199
-msgid "Sidebar"
+#: functions.php:201
+#, fuzzy
+msgid "Home Sidebar"
 msgstr "边栏"
 
-#: functions.php:208
+#: functions.php:210
+msgid "Post GridView Sidebar"
+msgstr "图片文章边栏"
+
+#: functions.php:220
+msgid "Post PostView Sidebar"
+msgstr "普通文章边栏"
+
+#: functions.php:230
+#, fuzzy
+msgid "Page Sidebar"
+msgstr "边栏"
+
+#: functions.php:239
+msgid "Category/Tag/Author Sidebar"
+msgstr "分类、标签、作者 等等的边栏"
+
+#: functions.php:248
+msgid "Header-1"
+msgstr "顶部"
+
+#: functions.php:256
+msgid "Header-2"
+msgstr "菜单栏"
+
+#: functions.php:265
 msgid "Footer 1"
 msgstr "页尾 1"
 
-#: functions.php:210 functions.php:216 functions.php:217 functions.php:218
+#: functions.php:267 functions.php:273 functions.php:274 functions.php:275
 msgid "Widetized footer"
 msgstr "Widetized 页尾"
 
-#: functions.php:216
+#: functions.php:273
 msgid "Footer 2"
 msgstr "页尾 2"
 
-#: functions.php:217
+#: functions.php:274
 msgid "Footer 3"
 msgstr "页尾 3"
 
-#: functions.php:218
+#: functions.php:275
 msgid "Footer 4"
 msgstr "页尾 4"
 
-#: header.php:44
+#: header.php:55
 msgid "Menu"
 msgstr "菜单"
 
-#: header.php:45
+#: header.php:56
 msgid "Skip to content"
 msgstr "跳至内容"
 
@@ -289,16 +329,11 @@ msgstr ""
 msgid "Custom text that will appear in the footer of your theme."
 msgstr ""
 
-#: search.php:16
-#, php-format
-msgid "Search Results for: %s"
-msgstr "%s 的搜寻结果"
-
-#: search.php:36
+#: search.php:30
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "抱歉，但没有符合你的搜查条件。请尝试用其他关键字。"
+msgstr "抱歉，没有找到文章。请尝试用其他关键字。"
 
 #: sidebar.php:18
 msgid "Archives"
@@ -327,7 +362,7 @@ msgstr ""
 msgid "Post navigation"
 msgstr "文章导览"
 
-#: single.php:33
+#: single.php:49
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
@@ -336,7 +371,7 @@ msgstr ""
 "发表于 %1$s 并且被打上标签 %2$s. 将 <a href=\"%3$s\" title=\"Permalink to "
 "%4$s\" rel=\"bookmark\">permalink</a> 加入书签。"
 
-#: single.php:35
+#: single.php:51
 #, php-format
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
@@ -345,7 +380,11 @@ msgstr ""
 "发表于 %1$s. 将 <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a> 加入书签。"
 
-#: tag.php:16
+#: single.php:87
+msgid "Navigation"
+msgstr "导航"
+
+#: tag.php:66
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "标籤归档：%s"
@@ -424,18 +463,6 @@ msgstr "发表于 "
 msgid "Tagged "
 msgstr "已标籤 "
 
-#: extensions/template-helpers.php:45
-msgid "Leave a comment"
-msgstr "留下评论"
-
-#: extensions/template-helpers.php:45
-msgid "1 Comment"
-msgstr "1 个评论"
-
-#: extensions/template-helpers.php:45
-msgid "% Comments"
-msgstr "% 个评论"
-
 #: extensions/template-helpers.php:68
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> 旧文章"
@@ -443,6 +470,9 @@ msgstr "<span class=\"meta-nav\">&larr;</span> 旧文章"
 #: extensions/template-helpers.php:69
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "新文章 <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Search Results for: %s"
+#~ msgstr "%s 的搜寻结果"
 
 #~ msgid "Daily Archives: <span>%s</span>"
 #~ msgstr "每日归档：<span>%s</span>"

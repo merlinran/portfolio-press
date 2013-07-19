@@ -7,7 +7,21 @@
 ?>
 	</div>
 	</div><!-- #main -->
-
+	<script type="text/javascript">
+	jQuery('.page-title').appendTo('#breadcrumb');
+	var lang = location.search.match(/[\?\&]lang=([^\&]*)/i);
+	if(lang) {
+		lang = lang[1];
+		jQuery('.customMetaWidget a').each(function(){
+			var href = jQuery(this).attr('href');
+			if(!href.match(/\?/))
+				href += '?';
+			if(!href.match(/[\?\&]$/))
+				href += '&';
+			jQuery(this).attr('href', href + 'lang=' + lang);
+		});
+	}
+	</script>
 	<footer id="colophon">
 		<div class="col-width">
     
@@ -36,7 +50,8 @@
 	        
 			<div id="site-generator">
 				<p><?php if (!$footer = of_get_option('footer_text', false) ) { ?>
-					<?php _e('Powered by', 'portfoliopress'); ?> <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'portfoliopress' ); ?>" rel="generator"><?php printf( __( 'WordPress', 'portfoliopress' ) ); ?></a> &amp; <a href="http://wptheming.com/2010/07/portfolio-theme/"><?php _e('Portfolio', 'portfoliopress'); ?>.</a>
+					<?php _e('Powered by', 'portfoliopress'); ?> <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'portfoliopress' ); ?>" rel="generator"><?php printf( __( 'WordPress', 'portfoliopress' ) ); ?></a> &amp; <a href="http://wptheming.com/2010/07/portfolio-theme/"><?php _e('Portfolio', 'portfoliopress'); ?></a>
+					(<a href='https://github.com/huxia/portfolio-press' target=_blank>modified</a> by <a target=_blank href="http://huizhe.name/">Huizhe XIAO</a>).
 				<?php } else {
 					echo stripslashes($footer);
 					} ?>

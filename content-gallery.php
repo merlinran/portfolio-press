@@ -41,7 +41,7 @@
 						number_format_i18n( $total_images )
 					); ?></em></p>
 			<?php endif; ?>
-			<?php the_excerpt(); ?>
+			<?php the_content(); ?>
 		<?php endif; ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'portfoliopress' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-summary -->

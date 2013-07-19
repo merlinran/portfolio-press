@@ -111,9 +111,11 @@ add_filter( 'wp_title', 'portfolioplus_wp_title', 10, 2 );
  
 function portfoliopress_scripts() {
 	wp_enqueue_script( 'superfish', get_template_directory_uri() .'/js/superfish.js', array( 'jquery' ), false, true );
+	/*
 	if ( !is_single() ) {
 		wp_enqueue_script( 'themejs', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), false, true );
 	}
+	*/
 }
 add_action('wp_enqueue_scripts', 'portfoliopress_scripts');
 
@@ -196,8 +198,46 @@ add_filter( 'wp_nav_menu_args', 'portfolio_wp_nav_menu_args' );
 function portfoliopress_widgets_init() {
 
 	register_sidebar( array (
-			'name' => __( 'Sidebar', 'portfoliopress' ),
-			'id' => 'sidebar',
+			'name' => __( 'Home Sidebar', 'portfoliopress' ),
+			'id' => 'sidebar-home',
+			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+			'after_widget' => "</li>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		) );
+
+	register_sidebar( array (
+			'name' => __( 'Post GridView Sidebar', 'portfoliopress' ),
+			'id' => 'sidebar-post-grid',
+			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+			'after_widget' => "</li>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		) );
+
+
+	register_sidebar( array (
+			'name' => __( 'Post PostView Sidebar', 'portfoliopress' ),
+			'id' => 'sidebar-post',
+			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+			'after_widget' => "</li>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		) );
+
+
+	register_sidebar( array (
+			'name' => __( 'Page Sidebar', 'portfoliopress' ),
+			'id' => 'sidebar-page',
+			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+			'after_widget' => "</li>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		) );
+
+	register_sidebar( array (
+			'name' => __( 'Category/Tag/Author Sidebar', 'portfoliopress' ),
+			'id' => 'sidebar-others',
 			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 			'after_widget' => "</li>",
 			'before_title' => '<h3 class="widget-title">',
@@ -243,10 +283,10 @@ add_action( 'init', 'portfoliopress_widgets_init' );
 function wpt_portfolio_custom_posts_per_page( $query ) {
 	global $wp_the_query;
 	if ( $wp_the_query === $query && !is_admin() ) {
-		if ( is_post_type_archive( 'portfolio' ) || is_tax( 'portfolio_tag' ) ||  is_tax( 'portfolio_category' ) ) {
-			$posts_per_page = apply_filters( 'portfoliopress_posts_per_page', '9' );
+		//if ( is_post_type_archive( 'portfolio' ) || is_tax( 'portfolio_tag' ) ||  is_tax( 'portfolio_category' ) ) {
+			$posts_per_page = apply_filters( 'portfoliopress_posts_per_page', '12' );
 			$query->set( 'posts_per_page', $posts_per_page );
-		}
+		//}
 	}
 }
 add_action( 'pre_get_posts', 'wpt_portfolio_custom_posts_per_page' );

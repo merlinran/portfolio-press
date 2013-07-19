@@ -4,6 +4,7 @@
  *
  * @package Portfolio Press
  */
+global $comments_form_above_list;
  ?>
 
 	<div id="comments">
@@ -15,6 +16,8 @@
 	?>
 
 	<?php // You can start editing here -- including this comment! ?>
+
+	<?php if($comments_form_above_list) comment_form(); ?>
 
 	<?php if ( have_comments() ) : ?>
 		<h3 id="comments-title">
@@ -46,6 +49,7 @@
 
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
 
+	<?php if(!$comments_form_above_list) comment_form(); ?>
+	
 </div><!-- #comments -->

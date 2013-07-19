@@ -12,8 +12,15 @@ get_header();
 
 get_template_part( 'content-portfolio' );
 	
-if ( !of_get_option( 'portfolio_sidebar' ) )
-	get_sidebar();
+if ( !of_get_option( 'portfolio_sidebar' ) ){
+	?>
+
+	<div id="sidebar" class="page-sidebar">
+		<?php if ( ! dynamic_sidebar( 'sidebar-page' ) ) : ?>
+		<?php endif; // end top widget area ?>
+	</div>
+	<?php
+}
 
 get_footer();
 ?>

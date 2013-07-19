@@ -8,7 +8,7 @@
  	if ( of_get_option('layout') != 'layout-1col' ) : ?>
 	<div id="sidebar" role="complementary">
 		<ul class="xoxo">
-		<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
+		<?php if ( ! dynamic_sidebar( 'sidebar-others' ) ) : ?>
 
 			<li id="search" class="widget-container widget_search">
 				<?php get_search_form(); ?>

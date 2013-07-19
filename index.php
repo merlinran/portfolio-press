@@ -16,6 +16,8 @@ get_header(); ?>
 	<div id="primary">
 		<div id="content" role="main">
 			
+			<?php if ( function_exists( "easingsliderlite" ) ) { easingsliderlite(); } ?>
+			<div id="slideshow_bottom"></div>
 			<?php if ( have_posts() ) : ?>
 
 				<?php /* Start the Loop */ ?>
@@ -26,7 +28,7 @@ get_header(); ?>
 						 * If you want to overload this in a child theme then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() );
+						get_template_part( 'content-index', get_post_format() );
 					?>
 
 				<?php endwhile; ?>
@@ -34,11 +36,14 @@ get_header(); ?>
 				<?php portfoliopress_content_nav(); ?>
 				
 			<?php else : ?>
-				<?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'content-index', 'none' ); ?>
 			<?php endif; ?>
+		</div><!-- #content -->
 
-			</div><!-- #content -->
+		<div id="sidebar" class="home-sidebar">
+			<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
+			<?php endif; // end top widget area ?>
+		</div>
 		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
