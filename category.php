@@ -42,7 +42,7 @@ if ($is_grid){
 						# $classes .= ' no-thumb';
 					} ?>
 					<div class="<?php echo $classes; ?>">
-            <a href="<?php the_permalink() ?>" rel="bookmark" class="thumb"><img src="<?php echo catch_that_image($post->post_content); ?>"></img></a>
+            <a href="<?php the_permalink() ?>" rel="bookmark" class="thumb"><img src="<?php echo catch_that_image($post->post_content); ?>?imageView/2/w/235"></img></a>
 						<a href="<?php the_permalink() ?>" rel="bookmark" class="title-overlay"><?php the_title() ?></a>
 					</div>
 					<?php endwhile; ?>
