@@ -651,9 +651,7 @@ a:focus img[class*=align],a:hover img[class*=align],a:active img[class*=align],a
 }
 
 #portfolio .portfolio-item img {
-  display:block;
-  width:100%;
-  height:auto;
+  min-height:13em;
 }
 
 #portfolio .thumb {
