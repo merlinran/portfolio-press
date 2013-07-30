@@ -659,6 +659,11 @@ a:focus img[class*=align],a:hover img[class*=align],a:active img[class*=align],a
   width:100%;
   height:13em;
   overflow:hidden;
+  box-shadow:2px 2px 4px rgba(0,0,0,.75);
+}
+
+#portfolio .thumb:active {
+  box-shadow:none;
 }
 
 #portfolio a.title-overlay {
