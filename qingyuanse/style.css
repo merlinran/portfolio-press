@@ -16,23 +16,19 @@
 
 #navigation {
   float:left;
+  min-width: 539px;
 }
 
 #branding {
-  height:104px;
   background:#e6e6e6;
   padding:0;
+  border:0;
 }
 
 #branding .menu {
   font-weight:700;
   font-size:20px;
   padding-top:15px;
-}
-
-#menu-test>.menu-item {
-  border-radius:5px;
-  overflow:hidden;
 }
 
 #navigation ul .sf-sub-indicator {
@@ -401,3 +397,8 @@ footer {
   margin-right:0;
 }
 
+@media (max-width:1134px) {
+  #branding .col-width {
+    max-width:540px;
+  }
+}
