@@ -1,4 +1,8 @@
-﻿#header-1 {
+﻿#wrapper {
+    min-width:580px; /* navigation's width plus padding */
+}
+
+#header-1 {
   text-align:right;
   background:#c2c2c2;
   padding:1px 4px;
@@ -16,7 +20,7 @@
 
 #navigation {
   float:left;
-  min-width: 539px;
+  min-width: 540px;
 }
 
 #branding {
@@ -237,6 +241,7 @@
   display:table-cell;
   vertical-align:middle;
   width:24%;
+  min-width:236px;
   margin:0 1% 2% 0;
 }
 
@@ -398,7 +403,10 @@ footer {
 }
 
 @media (max-width:1134px) {
-  #branding .col-width {
+  .col-width {
     max-width:540px;
+  }
+  #navigation {
+    padding-top:0;
   }
 }
