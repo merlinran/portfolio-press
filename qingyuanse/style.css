@@ -96,11 +96,11 @@
   padding: 0 0 20px 0;
 }
 
-#breadcrumb .page-title span {
-  display:inline;
+#breadcrumb .page-title {
+  display:none;
 }
 
-#breadcrumb a,#breadcrumb .page-title {
+#breadcrumb a {
   padding-bottom:13px;
   display:inline;
   border:none;
@@ -377,7 +377,7 @@ footer {
   color:#000;
 }
 
-#header-1 .widget-title,#header-2 .widget-title,#breadcrumb span,#comments form code,#comments form .form-allowed-tags,.ds-powered-by,.easingsliderlite-slide .alt {
+#header-1 .widget-title,#header-2 .widget-title,#comments form code,#comments form .form-allowed-tags,.ds-powered-by,.easingsliderlite-slide .alt {
   display:none;
 }
 
