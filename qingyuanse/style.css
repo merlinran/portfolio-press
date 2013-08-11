@@ -35,6 +35,10 @@
   padding-top:15px;
 }
 
+#site-title {
+  height:102px; /* workaround  */
+}
+
 #navigation ul .sf-sub-indicator {
   top:10px;
   width:18px;
